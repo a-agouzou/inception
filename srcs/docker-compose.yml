@@ -20,7 +20,7 @@ services:
   mariadb:
     image: mariadb
     container_name: mariadb
-    build: ./srcs/mariadb
+    build: ./mariadb
     volumes:
       - mariadb:/var/lib/mysql
     networks:
@@ -31,7 +31,7 @@ services:
   wordpress:
     image: wordpress
     container_name: wordpress
-    build: ./srcs/wordpress
+    build: ./wordpress
     depends_on:
       - mariadb
     volumes:
@@ -44,7 +44,7 @@ services:
   nginx:
     image: nginx
     container_name: nginx
-    build: ./srcs/nginx
+    build: ./nginx
     ports:
       - "443:443"
     depends_on:
