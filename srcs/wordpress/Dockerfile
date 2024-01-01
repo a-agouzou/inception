@@ -10,14 +10,6 @@ RUN apt update && apt upgrade && apt install wget -y
 
 RUN apt-get install -y php php-fpm php-mysql mariadb-client
 
-RUN wget -P /var/www https://wordpress.org/latest.tar.gz
-
-RUN cd /var/www && tar -xzf /var/www/latest.tar.gz && rm /var/www/latest.tar.gz
-
-# RUN mv /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php
-
-RUN	chown -R root:root /var/www/wordpress
-
 COPY conf/www.conf /etc/php/7.4/fpm/pool.d/
 
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar

@@ -1,7 +1,6 @@
 #!/bin/bash
-mysql_install_db
+# mysql_install_db
 service mariadb start
-
 
 mysql -e "CREATE DATABASE IF NOT EXISTS ${WORDPRESS_DB_NAME};"
 mysql -e "CREATE USER IF NOT EXISTS '${WORDPRESS_DB_USER}'@'%' IDENTIFIED BY '${WORDPRESS_DB_PASSWORD}';"
