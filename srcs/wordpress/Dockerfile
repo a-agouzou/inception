@@ -1,10 +1,6 @@
 FROM debian:bullseye
 
 #WORDPRESS DOCKERFILE
-ENV WORDPRESS_DB_NAME="wp_db"
-ENV WORDPRESS_DB_USER="abdo"
-ENV WORDPRESS_DB_PASSWORD="12345"
-ENV ROOT_PS="12345"
 
 RUN apt update && apt upgrade && apt install wget -y
 
@@ -17,7 +13,6 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 RUN chmod +x wp-cli.phar
 
 RUN mv wp-cli.phar /usr/local/bin/wp
-
 
 COPY conf/script.sh /
 
