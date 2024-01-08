@@ -1,14 +1,12 @@
 FROM debian:bullseye
 
-#WORDPRESS DOCKERFILE
-
 RUN apt update && apt upgrade && apt install wget -y
 
 RUN apt-get install -y php php-fpm php-mysql mariadb-client
 
 COPY conf/www.conf /etc/php/7.4/fpm/pool.d/
 
-COPY conf/script.sh /
+COPY tools/script.sh /
 
 RUN chmod +x script.sh
 

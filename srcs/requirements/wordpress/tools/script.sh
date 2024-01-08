@@ -20,5 +20,5 @@ wp core install --allow-root --url="https://aagouzou.42.fr" --title="aagouzou" -
     --admin_email="aagouzou1337@gmail.com" --skip-email --path='/var/www/wordpress'
 wp user create --allow-root ${WP_USER_NAME} abdo@aagouzou.42.fr --role=author --user_pass=${WP_USER_PASS} --path='/var/www/wordpress'
 mkdir -p /run/php
-#used to start the PHP FastCGI Process Manager (PHP-FPM) in foreground
+
 /usr/sbin/php-fpm7.4 -F
