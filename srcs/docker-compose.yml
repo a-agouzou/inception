@@ -5,16 +5,16 @@ volumes:
     name: wp
     driver: local
     driver_opts:
+      type: none
       device: /home/aagouzou/data/wp
       o: bind
-      type: none
   db:
     name: db
     driver: local
     driver_opts:
+      type: none
       device: /home/aagouzou/data/db
       o: bind
-      type: none
 
 services:
   mariadb:
